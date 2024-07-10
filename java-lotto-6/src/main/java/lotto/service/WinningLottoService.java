@@ -102,21 +102,20 @@ public class WinningLottoService {
      * @return 로또 순위 응답 Map
      */
     private LinkedHashMap<LottoRankResponse, Integer> createLottoRankResponsesMap(List<LottoRank> lottoRanks) {
+
+        // NONE 을 제외한 모든 LottoRankResponse 를 0으로 초기화
         LinkedHashMap<LottoRankResponse, Integer> lottoRankResponsesMap = new LinkedHashMap<>();
+        LottoRank.valuesExceptNone()
+                .forEach(lottoRank -> lottoRankResponsesMap.put(LottoRankResponse.of(lottoRank), 0));
 
-        LottoRank.valuesExceptNone().forEach(
-                lottoRank -> lottoRankResponsesMap.put(LottoRankResponse.of(lottoRank), 0)
-        );
+        // LottoRank 를 LottoRankResponse 로 변환하고 개수를 세어 맵에 추가
+        lottoRanks.stream()
+                .filter(lottoRank -> lottoRank != LottoRank.NONE)// NONE 은 제외
+                .map(LottoRankResponse::of)// LottoRank 를 LottoRankResponse 로 변환
+                .forEach(lottoRankResponse ->// 개수를 세어 맵에 추가
+                        lottoRankResponsesMap.merge(lottoRankResponse, 1, Integer::sum)
+                );
 
-        // LottoRank 가 NONE 인 경우를 제외하고 LottoRankResponse 로 변환하여 List 로 만든다.
-        List<LottoRankResponse> lottoRankResponses = lottoRanks.stream()
-                .filter(lottoRank -> lottoRank != LottoRank.NONE)
-                .map(LottoRankResponse::of)
-                .toList();
-
-        for (LottoRankResponse lottoRankResponse : lottoRankResponses) {
-            lottoRankResponsesMap.put(lottoRankResponse, lottoRankResponsesMap.get(lottoRankResponse) + 1);
-        }
         return lottoRankResponsesMap;
     }
 }
