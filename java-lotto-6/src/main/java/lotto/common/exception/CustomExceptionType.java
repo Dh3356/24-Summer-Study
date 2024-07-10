@@ -2,6 +2,7 @@ package lotto.common.exception;
 
 import lotto.common.exception.classes.BonusNumberConflictException;
 import lotto.common.exception.classes.CustomException;
+import lotto.common.exception.classes.CustomExceptionCreationFailedException;
 import lotto.common.exception.classes.InvalidBonusNumberRangeException;
 import lotto.common.exception.classes.InvalidLottoRangeException;
 import lotto.common.exception.classes.InvalidLottoSizeException;
@@ -21,7 +22,8 @@ public enum CustomExceptionType {
     INVALID_NUMBER_INPUT(InvalidNumberInputException.class),// 입력한 숫자가 유효하지 않은 경우
     LOTTO_MONEY_TOO_SMALL(LottoMoneyTooSmallException.class),// 로또 구매 금액이 유효하지 않은 경우
     LOTTO_NUMBER_DUPLICATE(LottoNumberDuplicateException.class),// 로또 번호가 중복되는 경우
-    LOTTO_PURCHASE_AMOUNT_NOT_MULTIPLE(LottoPurchaseAmountNotMultipleException.class);// 로또 구매 금액이 유효하지 않은 경우
+    LOTTO_PURCHASE_AMOUNT_NOT_MULTIPLE(LottoPurchaseAmountNotMultipleException.class),// 로또 구매 금액이 유효하지 않은 경우
+    CREATE_CUSTOM_EXCEPTION_FAILED(CustomExceptionCreationFailedException.class);// 커스텀 예외 객체 생성 실패
 
     private final Class<? extends CustomException> exceptionClass;
 
