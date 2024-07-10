@@ -1,7 +1,6 @@
 package lotto.common.exception;
 
 import lotto.common.exception.classes.CustomException;
-import lotto.common.exception.classes.CustomExceptionCreationFailedException;
 
 /**
  * 커스텀 예외를 생성하는 클래스
@@ -25,7 +24,7 @@ public class ExceptionFactory {
             return exceptionClass.getDeclaredConstructor().newInstance();
         } catch (Exception e) {
             // 예외 객체 생성 실패 시 CustomExceptionCreationFailedException 예외 발생
-            throw new CustomExceptionCreationFailedException(e);
+            throw getCustomException(CustomExceptionType.CREATE_CUSTOM_EXCEPTION_FAILED);
         }
     }
 }
