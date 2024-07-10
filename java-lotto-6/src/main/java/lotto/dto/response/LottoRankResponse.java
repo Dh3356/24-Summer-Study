@@ -13,10 +13,10 @@ public class LottoRankResponse {
     private final boolean isBonusMatch;
     private final int prize;
 
-    private LottoRankResponse(int matchCount, boolean isBonusMatch, int price) {
+    private LottoRankResponse(int matchCount, boolean isBonusMatch, int prize) {
         this.matchCount = matchCount;
         this.isBonusMatch = isBonusMatch;
-        this.prize = price;
+        this.prize = prize;
     }
 
     /**
