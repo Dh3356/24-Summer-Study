@@ -1,13 +1,12 @@
 package lotto.domain;
 
-import static lotto.common.constant.ErrorMessageConstants.INVALID_LOTTO_NUMBER_DUPLICATE;
-import static lotto.common.constant.ErrorMessageConstants.INVALID_LOTTO_NUMBER_RANGE;
-import static lotto.common.constant.ErrorMessageConstants.INVALID_LOTTO_NUMBER_SIZE;
 import static lotto.common.constant.LottoConstants.LOTTO_MAX;
 import static lotto.common.constant.LottoConstants.LOTTO_MIN;
 import static lotto.common.constant.LottoConstants.LOTTO_SIZE;
+import static lotto.common.exception.ExceptionFactory.getCustomException;
 
 import java.util.List;
+import lotto.common.exception.CustomExceptionType;
 
 /**
  * 로또 번호를 관리하는 객체 로또 번호는 1부터 45까지의 숫자로 이루어져 있으며, 중복되는 숫자가 없어야 한다. 사용자 로또, 당첨 로또를 관리하는 객체가 상속받아 사용한다. 로또 번호는 숫자를 포함하고
@@ -70,7 +69,7 @@ public class Lotto {
      */
     private void validateNumbersSize(List<Integer> numbers) {
         if (numbers.size() != LOTTO_SIZE) {
-            throw new IllegalArgumentException(INVALID_LOTTO_NUMBER_SIZE);
+            throw getCustomException(CustomExceptionType.INVALID_LOTTO_SIZE);
         }
     }
 
@@ -81,7 +80,7 @@ public class Lotto {
      */
     private void validateNumbersConflict(List<Integer> numbers) {
         if (numbers.stream().distinct().count() != numbers.size()) {
-            throw new IllegalArgumentException(INVALID_LOTTO_NUMBER_DUPLICATE);
+            throw getCustomException(CustomExceptionType.LOTTO_NUMBER_DUPLICATE);
         }
     }
 
@@ -101,7 +100,7 @@ public class Lotto {
      */
     private void validateNumberRange(int number) {
         if (number < LOTTO_MIN || number > LOTTO_MAX) {
-            throw new IllegalArgumentException(INVALID_LOTTO_NUMBER_RANGE);
+            throw getCustomException(CustomExceptionType.INVALID_LOTTO_RANGE);
         }
     }
 }

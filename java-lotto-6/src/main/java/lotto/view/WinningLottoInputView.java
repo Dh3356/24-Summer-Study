@@ -1,10 +1,11 @@
 package lotto.view;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
-import static lotto.common.constant.ErrorMessageConstants.INVALID_INPUT_NUMBER;
+import static lotto.common.exception.ExceptionFactory.getCustomException;
 
 import java.util.List;
 import java.util.stream.Stream;
+import lotto.common.exception.CustomExceptionType;
 import lotto.dto.request.WinningLottoRequest;
 
 /**
@@ -29,7 +30,7 @@ public class WinningLottoInputView {
 
             return new WinningLottoRequest(winningLotto, bonusNumber);
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException(INVALID_INPUT_NUMBER);
+            throw getCustomException(CustomExceptionType.INVALID_NUMBER_INPUT);
         }
     }
 }

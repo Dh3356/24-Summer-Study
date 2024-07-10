@@ -1,12 +1,12 @@
 package lotto.domain;
 
 
-import static lotto.common.constant.ErrorMessageConstants.INVALID_BONUS_NUMBER_CONFLICT;
-import static lotto.common.constant.ErrorMessageConstants.INVALID_BONUS_NUMBER_RANGE;
 import static lotto.common.constant.LottoConstants.LOTTO_BONUS_MAX;
 import static lotto.common.constant.LottoConstants.LOTTO_BONUS_MIN;
+import static lotto.common.exception.ExceptionFactory.getCustomException;
 
 import java.util.List;
+import lotto.common.exception.CustomExceptionType;
 
 /**
  * 당첨 로또
@@ -53,13 +53,13 @@ public class WinningLotto extends Lotto {
 
     private void validateBonusNumberRange(int bonusNumber) {
         if (bonusNumber < LOTTO_BONUS_MIN || bonusNumber > LOTTO_BONUS_MAX) {
-            throw new IllegalArgumentException(INVALID_BONUS_NUMBER_RANGE);
+            throw getCustomException(CustomExceptionType.INVALID_BONUS_NUMBER_RANGE);
         }
     }
 
     private void validateNumbersConflict(List<Integer> numbers) {
         if (numbers.contains(bonusNumber)) {
-            throw new IllegalArgumentException(INVALID_BONUS_NUMBER_CONFLICT);
+            throw getCustomException(CustomExceptionType.BONUS_NUMBER_CONFLICT);
         }
     }
 

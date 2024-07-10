@@ -1,12 +1,12 @@
 package lotto.service;
 
-import static lotto.common.constant.ErrorMessageConstants.INVALID_LOTTO_MONEY_MULTIPLE;
-import static lotto.common.constant.ErrorMessageConstants.INVALID_LOTTO_MONEY_TOO_SMALL;
 import static lotto.common.constant.LottoConstants.LOTTO_PRICE;
 import static lotto.common.constant.NumberConstants.ZERO;
+import static lotto.common.exception.ExceptionFactory.getCustomException;
 
 import java.util.LinkedList;
 import java.util.List;
+import lotto.common.exception.CustomExceptionType;
 import lotto.common.util.generator.LottoNumberGenerator;
 import lotto.domain.Lotto;
 import lotto.dto.request.PurchaseLottoRequest;
@@ -77,13 +77,13 @@ public class LottoService {
      */
     private void validateMoneyRange(int money) {
         if (money < LOTTO_PRICE) {
-            throw new IllegalArgumentException(INVALID_LOTTO_MONEY_TOO_SMALL);
+            throw getCustomException(CustomExceptionType.LOTTO_MONEY_TOO_SMALL);
         }
     }
 
     private void validateMoneyMultiple(int money) {
         if (money % LOTTO_PRICE != ZERO) {
-            throw new IllegalArgumentException(INVALID_LOTTO_MONEY_MULTIPLE);
+            throw getCustomException(CustomExceptionType.LOTTO_PURCHASE_AMOUNT_NOT_MULTIPLE);
         }
     }
 
