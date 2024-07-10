@@ -1,5 +1,7 @@
 package lotto.view;
 
+import static lotto.common.constant.LottoResultMessageFormatter.lottoResultMessage;
+
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -59,22 +61,8 @@ public class WinningLottoOutputView {
      * @param count             당첨 횟수
      */
     private void printLottoRank(LottoRankResponse lottoRankResponse, int count) {
-        StringBuilder message = new StringBuilder();
-
-        message.append(lottoRankResponse.getMatchCount()).append("개 일치");
-
-        if (lottoRankResponse.isBonusMatch()) {
-            message.append(", 보너스 볼 일치");
-        }
-
-        message.append(" (")
-                .append(formatPrize(lottoRankResponse.getPrize())).append("원) - ")
-                .append(count).append("개");
-
-        System.out.println(message);
+        System.out.println(lottoResultMessage(lottoRankResponse) + count + "개");
     }
 
-    private String formatPrize(int prize) {
-        return String.format("%,d", prize);
-    }
+
 }
