@@ -17,7 +17,7 @@ public class WinningLottoController {
         return winningLottoService.createWinningLotto(winningLottoRequest);
     }
 
-    public CalculateLottoResponse CalculateLotto(CalculateLottoRequest calculateLottoRequest) {
+    public CalculateLottoResponse calculateLotto(CalculateLottoRequest calculateLottoRequest) {
         return winningLottoService.calculateWinningLotto(calculateLottoRequest);
     }
 }
