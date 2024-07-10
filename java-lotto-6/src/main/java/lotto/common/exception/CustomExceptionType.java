@@ -10,7 +10,10 @@ import lotto.common.exception.classes.LottoMoneyTooSmallException;
 import lotto.common.exception.classes.LottoNumberDuplicateException;
 import lotto.common.exception.classes.LottoPurchaseAmountNotMultipleException;
 
-public enum ExceptionType {
+/**
+ * 커스텀 예외의 타입을 정의하는 Enum
+ */
+public enum CustomExceptionType {
     INVALID_LOTTO_RANGE(InvalidLottoRangeException.class),// 로또 번호 범위가 유효하지 않은 경우
     BONUS_NUMBER_CONFLICT(BonusNumberConflictException.class),// 보너스 번호가 당첨 번호와 중복되는 경우
     INVALID_BONUS_NUMBER_RANGE(InvalidBonusNumberRangeException.class),// 보너스 번호 범위가 유효하지 않은 경우
@@ -22,7 +25,7 @@ public enum ExceptionType {
 
     private final Class<? extends CustomException> exceptionClass;
 
-    ExceptionType(Class<? extends CustomException> exceptionClass) {
+    CustomExceptionType(Class<? extends CustomException> exceptionClass) {
         this.exceptionClass = exceptionClass;
     }
 
