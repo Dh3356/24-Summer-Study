@@ -1,6 +1,6 @@
 package lotto.view;
 
-import static lotto.common.constant.LottoResultMessageFormatter.lottoResultMessage;
+import static lotto.common.util.formatter.LottoResultMessageFormatter.lottoResultMessage;
 
 import java.util.Comparator;
 import java.util.HashMap;

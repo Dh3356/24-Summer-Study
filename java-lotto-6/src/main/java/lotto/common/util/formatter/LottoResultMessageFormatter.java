@@ -1,4 +1,4 @@
-package lotto.common.constant;
+package lotto.common.util.formatter;
 
 import lotto.dto.response.LottoRankResponse;
 
