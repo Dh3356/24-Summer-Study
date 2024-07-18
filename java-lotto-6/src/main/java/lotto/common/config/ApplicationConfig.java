@@ -44,6 +44,14 @@ public class ApplicationConfig {
         return winningLottoOutputView;
     }
 
+    public LottoService lottoService() {
+        return lottoService;
+    }
+
+    public WinningLottoService winningLottoService() {
+        return winningLottoService;
+    }
+
     public LottoController lottoController() {
         return lottoController;
     }
