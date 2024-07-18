@@ -54,7 +54,7 @@ public class WinningLottoService {
         LinkedHashMap<LottoRankResponse, Integer> lottoRankResponsesMap = createLottoRankResponsesMap(lottoRanks);
 
         // 총 상금과 총 구매 금액을 통해 수익률을 계산한다.
-        float profitRate = lottoWinningCalculator.calculateProfitRate(lottoRanks, lottos.size());
+        double profitRate = lottoWinningCalculator.calculateProfitRate(lottoRanks, lottos.size());
 
         // 로또 순위 응답 Map 과 수익률을 통해 로또 계산 응답 DTO 를 생성한다.
         return new CalculateLottoResponse(lottoRankResponsesMap, profitRate);

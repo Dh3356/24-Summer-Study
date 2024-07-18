@@ -30,11 +30,11 @@ public class LottoWinningCalculator {
      * @param lottoCount 로또 구매 개수
      * @return
      */
-    public float calculateProfitRate(List<LottoRank> lottoRanks, int lottoCount) {
+    public double calculateProfitRate(List<LottoRank> lottoRanks, int lottoCount) {
         long totalPrize = calculateTotalPrize(lottoRanks);
         int totalPurchasePrice = lottoCount * LOTTO_PRICE;
 
-        return Math.round((float) totalPrize / totalPurchasePrice * 10000) / 100f;
+        return Math.round((double) totalPrize / totalPurchasePrice * 10000) / 100f;
     }
 
     /**

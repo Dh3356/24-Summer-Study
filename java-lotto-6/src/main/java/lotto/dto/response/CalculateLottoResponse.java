@@ -9,9 +9,9 @@ import java.util.LinkedHashMap;
  */
 public class CalculateLottoResponse {
     private final LinkedHashMap<LottoRankResponse, Integer> lottoRankResponses;// 로또 순위별 당첨 횟수
-    private final float profitRate;// 수익률
+    private final double profitRate;// 수익률
 
-    public CalculateLottoResponse(LinkedHashMap<LottoRankResponse, Integer> lottoRankResponses, float profitRate) {
+    public CalculateLottoResponse(LinkedHashMap<LottoRankResponse, Integer> lottoRankResponses, double profitRate) {
         this.lottoRankResponses = lottoRankResponses;
         this.profitRate = profitRate;
     }
@@ -20,7 +20,7 @@ public class CalculateLottoResponse {
         return lottoRankResponses;
     }
 
-    public float getProfitRate() {
+    public double getProfitRate() {
         return profitRate;
     }
 }
