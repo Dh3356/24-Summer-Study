@@ -1,16 +1,35 @@
 package lotto;
 
-import camp.nextstep.edu.missionutils.test.NsTest;
-import org.junit.jupiter.api.Test;
-
-import java.util.List;
-
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomUniqueNumbersInRangeTest;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
+import static lotto.common.exception.CustomExceptionHandler.ERROR_PREFIX;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import camp.nextstep.edu.missionutils.test.NsTest;
+import java.util.List;
+import java.util.stream.Stream;
+import org.assertj.core.api.AssertionsForClassTypes;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+
 class ApplicationTest extends NsTest {
-    private static final String ERROR_MESSAGE = "[ERROR]";
+
+    // 올바르지 않은 로또 구매 금액 생성
+    private static Stream<String> provideInvalidPurchaseMoneys() {
+        return Stream.of("1000j", "1000.6", "1000sdf", "hello", "1000 1000");
+    }
+
+    // 올바르지 않은 당첨 번호 생성
+    private static Stream<String> provideInvalidWinningNumbers() {
+        return Stream.of("1,2,3,4,5,s", "s,2,d,4,5", "asdfsadfasdf", "a,b,c,d,e,f,g");
+    }
+
+    // 올바르지 않은 보너스 번호 생성
+    private static Stream<String> provideInvalidBonusNumbers() {
+        return Stream.of("a", "sadf", "1.2", "123 213");
+    }
 
     @Test
     void 기능_테스트() {
@@ -46,13 +65,36 @@ class ApplicationTest extends NsTest {
         );
     }
 
-    @Test
-    void 예외_테스트() {
+    @DisplayName("로또 구입 금액이 정수가 아닐 시 예외가 발생한다.")
+    @ParameterizedTest(name = "invalidPurchaseMoney: {0}")
+    @MethodSource("provideInvalidPurchaseMoneys")
+    void inputInvalidPurchaseMoney(String invalidPurchaseMoney) {
         assertSimpleTest(() -> {
-            runException("1000j");
-            assertThat(output()).contains(ERROR_MESSAGE);
+            runException(invalidPurchaseMoney);
+            AssertionsForClassTypes.assertThat(output()).contains(ERROR_PREFIX);
         });
     }
+
+    @DisplayName("당첨 번호가 정수가 아닐 시 예외가 발생한다.")
+    @ParameterizedTest(name = "invalidWinningNumbers: {0}")
+    @MethodSource("provideInvalidWinningNumbers")
+    void inputInvalidWinningNumbers(String invalidWinningNumbers) {
+        assertSimpleTest(() -> {
+            runException("1000", invalidWinningNumbers);
+            assertThat(output()).contains(ERROR_PREFIX);
+        });
+    }
+
+    @DisplayName("보너스 번호가 정수가 아닐 시 예외가 발생한다.")
+    @ParameterizedTest
+    @MethodSource("provideInvalidBonusNumbers")
+    void inputInvalidBonusNumber(String invalidBonusNumber) {
+        assertSimpleTest(() -> {
+            runException("1000", "1,2,3,4,5,6", invalidBonusNumber);
+            assertThat(output()).contains(ERROR_PREFIX);
+        });
+    }
+
 
     @Override
     public void runMain() {
