@@ -8,7 +8,7 @@ import lotto.common.exception.classes.CustomException;
  * 예외를 전달받아 콘솔에 출력하는 기능을 담당한다.
  */
 public class CustomExceptionHandler {
-    private static final String ERROR_PREFIX = "[ERROR] ";
+    public static final String ERROR_PREFIX = "[ERROR] ";
 
     public static void handleException(CustomException e) {
         System.out.println(ERROR_PREFIX + e.getMessage());
