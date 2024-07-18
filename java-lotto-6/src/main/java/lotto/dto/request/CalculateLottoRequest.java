@@ -25,4 +25,12 @@ public class CalculateLottoRequest {
     public List<LottoRequest> getLottoRequests() {
         return userLottoRequests;
     }
+
+    @Override
+    public String toString() {
+        return "CalculateLottoRequest{" +
+                "winningLottoRequest=" + winningLottoRequest +
+                ", userLottoRequests=" + userLottoRequests +
+                '}';
+    }
 }

@@ -48,7 +48,7 @@ public class WinningLotto extends Lotto {
      */
     private void validateBonusNumber(int bonusNumber) {
         validateBonusNumberRange(bonusNumber);
-        validateNumbersConflict(numbers);
+        validateNumbersConflict(bonusNumber);
     }
 
     private void validateBonusNumberRange(int bonusNumber) {
@@ -57,7 +57,7 @@ public class WinningLotto extends Lotto {
         }
     }
 
-    private void validateNumbersConflict(List<Integer> numbers) {
+    private void validateNumbersConflict(int bonusNumber) {
         if (numbers.contains(bonusNumber)) {
             throw getCustomException(CustomExceptionType.BONUS_NUMBER_CONFLICT);
         }
@@ -65,5 +65,13 @@ public class WinningLotto extends Lotto {
 
     public int getBonusNumber() {
         return bonusNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "WinningLotto{" +
+                "numbers=" + numbers +
+                ", bonusNumber=" + bonusNumber +
+                '}';
     }
 }

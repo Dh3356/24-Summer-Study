@@ -18,4 +18,11 @@ public class LottoRequest {
     public List<Integer> getNumbers() {
         return numbers;
     }
+
+    @Override
+    public String toString() {
+        return "LottoRequest{" +
+                "numbers=" + numbers +
+                '}';
+    }
 }

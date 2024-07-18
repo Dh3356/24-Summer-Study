@@ -103,4 +103,11 @@ public class Lotto {
             throw getCustomException(CustomExceptionType.INVALID_LOTTO_RANGE);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Lotto{" +
+                "numbers=" + numbers +
+                "}";
+    }
 }

@@ -13,4 +13,11 @@ public class PurchaseLottoRequest {
     public int getMoney() {
         return money;
     }
+
+    @Override
+    public String toString() {
+        return "PurchaseLottoRequest{" +
+                "money=" + money +
+                '}';
+    }
 }

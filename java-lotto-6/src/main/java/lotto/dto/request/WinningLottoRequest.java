@@ -24,4 +24,12 @@ public class WinningLottoRequest {
     public int getBonusNumber() {
         return bonusNumber;
     }
+
+    @Override
+    public String toString() {
+        return "WinningLottoRequest{" +
+                "numbers=" + numbers +
+                ", bonusNumber=" + bonusNumber +
+                '}';
+    }
 }
