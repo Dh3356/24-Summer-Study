@@ -1,8 +1,13 @@
 package baseball;
 
+import baseball.baseball_game_client.BaseballGameClient;
+
 public class Application {
 
+  private final static BaseballGameClient BASEBALL_GAME_CLIENT = new BaseballGameClient();
+
   public static void main(String[] args) {
-    // TODO: 프로그램 구현
+    BASEBALL_GAME_CLIENT.run();
   }
 }
+
