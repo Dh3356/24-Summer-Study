@@ -1,7 +1,7 @@
-package baseball.baseball_game_client.common.message;
+package baseball.client.common.message;
 
-import static baseball.baseball_game_client.common.constant.Constants.BASEBALL_GAME_END;
-import static baseball.baseball_game_client.common.constant.Constants.BASEBALL_GAME_RESTART;
+import static baseball.client.common.constant.Constants.BASEBALL_GAME_END;
+import static baseball.client.common.constant.Constants.BASEBALL_GAME_RESTART;
 
 /**
  * 에러 메시지를 관리하는 클래스

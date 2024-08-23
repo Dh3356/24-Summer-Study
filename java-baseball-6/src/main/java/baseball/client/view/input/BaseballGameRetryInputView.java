@@ -1,8 +1,8 @@
-package baseball.baseball_game_client.view.input;
+package baseball.client.view.input;
 
-import static baseball.baseball_game_client.view.input.message.InputMessage.BASEBALL_GAME_RETRY_INPUT;
+import static baseball.client.view.input.message.InputMessage.BASEBALL_GAME_RETRY_INPUT;
 
-import baseball.baseball_game_client.util.input.InputUtil;
+import baseball.client.util.input.InputUtil;
 
 /**
  * 숫자 야구 게임 재시도 입력 뷰

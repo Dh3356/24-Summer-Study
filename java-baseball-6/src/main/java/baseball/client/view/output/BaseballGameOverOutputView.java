@@ -1,6 +1,6 @@
-package baseball.baseball_game_client.view.output;
+package baseball.client.view.output;
 
-import static baseball.baseball_game_client.view.output.message.OutputMessage.BASEBALL_GAME_OVER;
+import static baseball.client.view.output.message.OutputMessage.BASEBALL_GAME_OVER;
 
 /**
  * 숫자 야구 게임 종료 출력 뷰

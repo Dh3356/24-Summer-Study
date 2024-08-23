@@ -1,7 +1,7 @@
-package baseball.baseball_game_client.view.input.message;
+package baseball.client.view.input.message;
 
-import static baseball.baseball_game_client.common.constant.Constants.BASEBALL_GAME_END;
-import static baseball.baseball_game_client.common.constant.Constants.BASEBALL_GAME_RESTART;
+import static baseball.client.common.constant.Constants.BASEBALL_GAME_END;
+import static baseball.client.common.constant.Constants.BASEBALL_GAME_RESTART;
 
 /**
  * 입력을 받을 때 출력할 메시지를 관리하는 클래스

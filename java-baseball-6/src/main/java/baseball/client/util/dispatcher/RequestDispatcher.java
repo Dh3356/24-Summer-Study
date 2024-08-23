@@ -1,4 +1,4 @@
-package baseball.baseball_game_client.util.dispatcher;
+package baseball.client.util.dispatcher;
 
 import baseball.protocol.name_server.NameServer;
 import baseball.protocol.request.ClientRequest;

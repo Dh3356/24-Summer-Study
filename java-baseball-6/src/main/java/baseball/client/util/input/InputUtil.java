@@ -1,7 +1,7 @@
-package baseball.baseball_game_client.util.input;
+package baseball.client.util.input;
 
-import static baseball.baseball_game_client.common.message.ErrorMessage.INPUT_NOT_NUMBER_ERROR;
-import static baseball.baseball_game_client.common.message.ErrorMessage.INVALID_INPUT_ERROR;
+import static baseball.client.common.message.ErrorMessage.INPUT_NOT_NUMBER_ERROR;
+import static baseball.client.common.message.ErrorMessage.INVALID_INPUT_ERROR;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.List;

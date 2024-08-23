@@ -1,7 +1,7 @@
-package baseball.baseball_game_client.util.dispatcher;
+package baseball.client.util.dispatcher;
 
-import static baseball.baseball_game_client.util.dispatcher.Message.INVALID_DATA_TYPE_ERROR;
-import static baseball.baseball_game_client.util.dispatcher.Message.NO_DATA_ERROR;
+import static baseball.client.util.dispatcher.Message.INVALID_DATA_TYPE_ERROR;
+import static baseball.client.util.dispatcher.Message.NO_DATA_ERROR;
 
 import baseball.protocol.response.ServerResponse;
 

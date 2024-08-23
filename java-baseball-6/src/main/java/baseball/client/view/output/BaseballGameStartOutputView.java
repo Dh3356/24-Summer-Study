@@ -1,6 +1,6 @@
-package baseball.baseball_game_client.view.output;
+package baseball.client.view.output;
 
-import static baseball.baseball_game_client.view.output.message.OutputMessage.BASEBALL_GAME_START;
+import static baseball.client.view.output.message.OutputMessage.BASEBALL_GAME_START;
 
 /**
  * 숫자 야구 게임 시작 출력 뷰

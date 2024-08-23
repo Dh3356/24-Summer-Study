@@ -1,4 +1,4 @@
-package baseball.baseball_game_client.view.input;
+package baseball.client.view.input;
 
 /**
  * 입력 뷰

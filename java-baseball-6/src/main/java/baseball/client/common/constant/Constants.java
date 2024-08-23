@@ -1,4 +1,4 @@
-package baseball.baseball_game_client.common.constant;
+package baseball.client.common.constant;
 
 public class Constants {
 

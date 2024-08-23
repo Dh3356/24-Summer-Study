@@ -1,6 +1,6 @@
-package baseball.baseball_game_client.view.output.message;
+package baseball.client.view.output.message;
 
-import static baseball.baseball_game_client.common.constant.Constants.BASEBALL_GAME_NUMBER_SIZE;
+import static baseball.client.common.constant.Constants.BASEBALL_GAME_NUMBER_SIZE;
 
 /**
  * 출력 메시지를 관리하는 클래스

@@ -1,4 +1,4 @@
-package baseball.baseball_game_client.util.dispatcher;
+package baseball.client.util.dispatcher;
 
 /**
  * Dispatcher 에서 사용하는 메시지를 관리하는 클래스

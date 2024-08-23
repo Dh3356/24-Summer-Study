@@ -1,8 +1,8 @@
-package baseball.baseball_game_client.common.enums;
+package baseball.client.common.enums;
 
-import static baseball.baseball_game_client.common.constant.Constants.BASEBALL_GAME_END;
-import static baseball.baseball_game_client.common.constant.Constants.BASEBALL_GAME_RESTART;
-import static baseball.baseball_game_client.common.message.ErrorMessage.INVALID_RETRY_STATE_ERROR;
+import static baseball.client.common.constant.Constants.BASEBALL_GAME_END;
+import static baseball.client.common.constant.Constants.BASEBALL_GAME_RESTART;
+import static baseball.client.common.message.ErrorMessage.INVALID_RETRY_STATE_ERROR;
 
 /**
  * 재시도 상태를 나타내는 enum

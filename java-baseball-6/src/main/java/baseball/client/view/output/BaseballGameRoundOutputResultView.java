@@ -1,8 +1,8 @@
-package baseball.baseball_game_client.view.output;
+package baseball.client.view.output;
 
-import static baseball.baseball_game_client.view.output.message.OutputMessage.BALL;
-import static baseball.baseball_game_client.view.output.message.OutputMessage.NOTHING;
-import static baseball.baseball_game_client.view.output.message.OutputMessage.STRIKE;
+import static baseball.client.view.output.message.OutputMessage.BALL;
+import static baseball.client.view.output.message.OutputMessage.NOTHING;
+import static baseball.client.view.output.message.OutputMessage.STRIKE;
 
 import baseball.dto.response.BaseballGameRoundResponse;
 import baseball.server.domain.Counts;
