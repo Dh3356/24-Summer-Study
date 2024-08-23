@@ -11,9 +11,6 @@ import java.util.Set;
 
 /**
  * 서버 이름을 관리하는 클래스
- * <p>
- * Singleton 패턴으로 구현해 인스턴스를 하나만 생성한다. 왜냐하면 NameServer 는 다른 클래스와 상호작용하는 클래스가 아니기 때문이고, 서버 이름을 관리하는
- * 역할만 하기 때문이다.
  */
 public class NameServer {
 
