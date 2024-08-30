@@ -1,6 +1,6 @@
 package baseball;
 
-import baseball.baseball_game_client.BaseballGameClient;
+import baseball.client.BaseballGameClient;
 
 public class Application {
 
