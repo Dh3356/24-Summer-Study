@@ -17,17 +17,15 @@ import java.util.Set;
  */
 public class BaseballGameServerConfig implements ServerConfig {
 
-  // Singleton
-  private static BaseballGameServerConfig instance;
-
   // 내부 DI
-  private final BaseballGamePolicy baseballGamePolicy = new NormalBaseballGamePolicy();
-  private final RandomNumberGenerator randomNumberGenerator = new NormalRandomNumberGenerator();
-  private final BaseballGameService baseballGameService = new BaseballGameService(
+  private static final BaseballGamePolicy baseballGamePolicy = new NormalBaseballGamePolicy();
+  private static final RandomNumberGenerator randomNumberGenerator = new NormalRandomNumberGenerator();
+  private static final BaseballGameService baseballGameService = new BaseballGameService(
       baseballGamePolicy,
       randomNumberGenerator
   );
-
+  // Singleton
+  private static BaseballGameServerConfig instance;
   // Controller 들
   private final BaseballGameController baseBallGameController = new BaseballGameController(
       baseballGameService
@@ -46,6 +44,18 @@ public class BaseballGameServerConfig implements ServerConfig {
       instance = new BaseballGameServerConfig();
     }
     return instance;
+  }
+
+  public static BaseballGameService getBaseballGameService() {
+    return baseballGameService;
+  }
+
+  public static BaseballGamePolicy getBaseballGamePolicy() {
+    return baseballGamePolicy;
+  }
+
+  public static RandomNumberGenerator getRandomNumberGenerator() {
+    return randomNumberGenerator;
   }
 
   /**
