@@ -20,7 +20,7 @@ public class NameServer {
   private final HashMap<String, Server> servers = new HashMap<>(); // 서버 이름과 서버 객체를 매핑한다.
   private Set<ServerConfig> serverConfigs; // 서버 설정들을 관리한다.
 
-  public NameServer() {
+  private NameServer() {
     initializeServerConfigs();
     initializeServers();
   }
